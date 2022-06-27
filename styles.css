@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+	--one-color: #3a4750;
+	--two-color: #d3d6db;
+	--three-color: #303841;
+	--four-color: #be3144;
+}
+
+body {
+	background: var(--three-color);
+}
+
+* {
+	font-family: "Lato", monospace;
+}
