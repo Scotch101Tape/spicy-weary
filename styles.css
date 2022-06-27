@@ -2,7 +2,7 @@
 
 :root {
 	--one-color: #3a4750;
-	--two-color: #d3d6db;
+	--text-color: #d3d6db;
 	--three-color: #303841;
 	--four-color: #be3144;
 }
@@ -13,4 +13,5 @@ body {
 
 * {
 	font-family: "Lato", monospace;
+	color: var(--text-color);
 }

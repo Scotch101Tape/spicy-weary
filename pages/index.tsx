@@ -1,17 +1,10 @@
 import Logo from "../components/logo"
+import Center from "../components/Center"
 import short from "short-uuid"
 import React from "react"
 import { link } from "fs"
 
 const styles = {
-  container: {
-    margin: "auto",
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform:" translate(-50%, -50%)",
-    width: "525px",
-  },
   button: {
     float: "right",
     marginLeft: "auto",
@@ -20,9 +13,7 @@ const styles = {
     backgroundColor: "var(--four-color)",
     color: "var(--two-color)"
   },
-  link: {
-    color: "var(--two-color)",
-  },
+  link: {},
   innerContainer: {
     backgroundColor: "var(--one-color)",
     borderRadius: "5px",
@@ -30,14 +21,13 @@ const styles = {
     padding: "10px"
   },
   message: {
-    color: "var(--two-color)",
     textAlign: "center",
     verticalAlign: "middle",
     margin: "10px"
   }
 } as const
 
-export default function index() {
+export default function() {
   const COPY_BUTTON_ID = "copy-button"
   const BUTTON_TEXT_CHANGE_TIMEOUT = 1 * 1000
   
@@ -73,7 +63,7 @@ export default function index() {
   }
 
   React.useEffect(() => {
-    document.title = "🥵😩"
+    document.title = "🥵😬"
 
     link = `${window.location.href}game/${short.generate()}`
     document.getElementById("link").innerHTML = link
@@ -82,7 +72,7 @@ export default function index() {
   return (
   <div>
     <Logo/>
-    <div style={styles.container}>
+    <Center width="525px" height="auto">
       <div style={styles.message}>Copy the link and share with friends to start a game</div>
       <div style={styles.innerContainer}>
         <div id="link" style={styles.link}>
@@ -92,7 +82,7 @@ export default function index() {
           Copy
         </button>
       </div>
-    </div>
+    </Center>
   </div>
   )
 }

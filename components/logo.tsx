@@ -5,5 +5,5 @@ const styles = {
 }
 
 export default function logo() {
-  return <div style={styles.text}>🥵😩</div>  
+  return <div style={styles.text}>🥵😬</div>  
 }
