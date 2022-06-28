@@ -1,5 +1,5 @@
 import Logo from "../components/logo"
-import Center from "../components/Center"
+import Center from "../components/center"
 import short from "short-uuid"
 import React from "react"
 import { link } from "fs"
@@ -10,12 +10,11 @@ const styles = {
     marginLeft: "auto",
     borderRadius: "5px",
     border: "0px",
-    backgroundColor: "var(--four-color)",
-    color: "var(--two-color)"
+    backgroundColor: "var(--special-color)",
   },
   link: {},
   innerContainer: {
-    backgroundColor: "var(--one-color)",
+    backgroundColor: "var(--main-color)",
     borderRadius: "5px",
     display: "flex",
     padding: "10px"

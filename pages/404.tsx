@@ -1,4 +1,4 @@
-import Center from "../components/Center"
+import Center from "../components/center"
 
 const styles = {
   text: {

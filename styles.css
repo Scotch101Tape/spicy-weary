@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 :root {
-	--one-color: #3a4750;
+	--main-color: #3a4750;
 	--text-color: #d3d6db;
-	--three-color: #303841;
-	--four-color: #be3144;
+	--background-color: #303841;
+	--special-color: #be3144;
 }
 
 body {
-	background: var(--three-color);
+	background: var(--background-color);
 }
 
 * {
