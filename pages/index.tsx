@@ -1,87 +1,31 @@
-import Logo from "../components/logo"
 import Center from "../components/center"
 import short from "short-uuid"
 import React from "react"
-import { link } from "fs"
+import Textbox from "../components/textbox"
+import CopyButton from "../components/copy-button"
+import styles from "./index.module.css"
 
-const styles = {
-  button: {
-    float: "right",
-    marginLeft: "auto",
-    borderRadius: "5px",
-    border: "0px",
-    backgroundColor: "var(--special-color)",
-  },
-  link: {},
-  innerContainer: {
-    backgroundColor: "var(--main-color)",
-    borderRadius: "5px",
-    display: "flex",
-    padding: "10px"
-  },
-  message: {
-    textAlign: "center",
-    verticalAlign: "middle",
-    margin: "10px"
-  }
-} as const
+export default function() {  
+  let link = new Promise((res, rej) => {
+    React.useEffect(() => {
+      const id = short.generate()
+      res(`${window.location.host}/a/${id}`)
+    })
+  })
 
-export default function() {
-  const COPY_BUTTON_ID = "copy-button"
-  const BUTTON_TEXT_CHANGE_TIMEOUT = 1 * 1000
-  
-  let link = ""
-
-  let buttonDebouce = false
-  const onButtonClick = async () => {
-    // Debouce the button click
-    if (buttonDebouce) {
-      return
-    }
-    buttonDebouce = true
-
-    const copyButton = document.getElementById(COPY_BUTTON_ID)
-
-    if (!navigator.clipboard) {
-      // Clipboard API not available
-      copyButton.innerHTML = "Not Copied ❌"
-      setTimeout(() => {
-        copyButton.innerHTML = "Copy"
-        buttonDebouce = false
-      }, BUTTON_TEXT_CHANGE_TIMEOUT)
-    } else {
-      // Copy link to clipboard
-      await navigator.clipboard.writeText(link)
-      console.log(link)
-      copyButton.innerHTML = "Copied ✅"
-      setTimeout(() => {
-        copyButton.innerHTML = "Copy"
-        buttonDebouce = false
-      }, BUTTON_TEXT_CHANGE_TIMEOUT)
-    }
-  }
-
-  React.useEffect(() => {
-    document.title = "🥵😬"
-
-    link = `${window.location.href}game/${short.generate()}`
-    document.getElementById("link").innerHTML = link
+  link.then(val => {
+    document.getElementById("link").innerHTML = val as string
   })
 
   return (
-  <div>
-    <Logo/>
-    <Center width="525px" height="auto">
-      <div style={styles.message}>Copy the link and share with friends to start a game</div>
-      <div style={styles.innerContainer}>
-        <div id="link" style={styles.link}>
-          {link}
+    <Center width="650px" height="auto">
+      <Textbox text="Copy the link and share with friends to start a game"/>
+      <div className={styles.innerContainer}>
+        <div id="link"/>
+        <div className={styles.buttonContainer}>
+          <CopyButton copyText={link}/>
         </div>
-        <button id={COPY_BUTTON_ID} style={styles.button} onClick={onButtonClick}>
-          Copy
-        </button>
       </div>
     </Center>
-  </div>
   )
 }

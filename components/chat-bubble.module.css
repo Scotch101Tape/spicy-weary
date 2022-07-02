@@ -1,0 +1,29 @@
+.chatBubbleLeft {
+  background-color: var(--background-color);
+  padding: 5px;
+  border-radius: 5px;
+  text-align: left;
+  max-width: 13em;
+  float: left;
+}
+
+.chatBubbleRight {
+  background-color: var(--special-color);
+  padding: 5px;
+  border-radius: 5px;
+  text-align: right;
+  max-width: 13em;
+  float: right;
+}
+
+.containerLeft {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.containerRight {
+  float: right;
+  width: 100%;
+  margin-top: 10px;
+}

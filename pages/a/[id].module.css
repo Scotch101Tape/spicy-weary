@@ -1,0 +1,28 @@
+.nameInput {
+  background-color: var(--main-color);
+  text-align: center;
+  box-sizing: border-box;
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  font-size: large;
+  padding-right: 10px;
+}
+
+.nameInput:focus {
+  outline: none;
+}
+
+.container {
+  background-color: var(--main-color);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.enter {
+  background-color: var(--special-color);
+  border-radius: 5px;
+  border: 0px;
+  padding: 10px;
+  color: var(--text-color);
+  font-size: large;
+}

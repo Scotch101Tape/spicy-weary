@@ -1,0 +1,11 @@
+.buttonContainer {
+  float: right;
+  margin-left: auto;
+}
+
+.innerContainer {
+  background-color: var(--main-color);
+  border-radius: 5px;
+  display: flex;
+  padding: 10px;
+}

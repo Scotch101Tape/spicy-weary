@@ -1,0 +1,5 @@
+.copyButton {
+  border-radius: 5px;
+  border: 0px;
+  background-color: var(--special-color);
+}

@@ -15,3 +15,7 @@ body {
 	font-family: "Lato", monospace;
 	color: var(--text-color);
 }
+
+::-webkit-scrollbar {
+  width: 0px;
+}

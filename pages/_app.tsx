@@ -1,16 +1,18 @@
 import '../styles.css'
 import Head from 'next/head'
+import Logo from '../components/logo'
+import React from 'react'
+import { SocketWrapper } from "../context/socket-context"
 
-// This default export is required in a new `pages/_app.js` file.
 export default function({ Component, pageProps }) {
   return <>
-      {/* Add the favicon */}
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
+        <title>🥵😬</title>
       </Head>
-      {/* Add the favicon */}
-      {/* Note that the path doesn't include "public" */}
-
-      <Component {...pageProps} />
+      <Logo/>
+      <SocketWrapper>
+        <Component {...pageProps} />
+      </SocketWrapper>
     </>
 }

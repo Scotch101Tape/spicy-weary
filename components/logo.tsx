@@ -1,6 +1,6 @@
 const styles = {
   text: {
-    fontSize: "40px"
+    fontSize: "3em"
   }
 }
 
